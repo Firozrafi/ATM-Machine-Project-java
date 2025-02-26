@@ -1,0 +1,91 @@
+                                           ATM MACHINE DOCUMENTATION
+Introduction
+The ATM System is a simple Java-based application that simulates ATM operations, including viewing balance, withdrawing money, depositing money, and viewing a mini statement. The system uses object-oriented programming principles and consists of multiple classes to handle different functionalities.
+Table of Contents
+1.	System Overview
+2.	Classes and Interfaces
+3.	Functionality
+4.	Usage Instructions
+5.	Code Explanation
+6.	Possible Enhancements
+7.	Security Measures
+8.	Error Handling and Logging
+9.	Future Scope
+________________________________________
+1. System Overview
+The ATM system allows users to interact with an ATM-like interface by entering their ATM number and PIN. Upon successful authentication, users can choose from different operations such as:
+•	Viewing available balance
+•	Withdrawing an amount
+•	Depositing an amount
+•	Viewing a mini statement
+•	Exiting the application
+The system ensures that all transactions are recorded securely and accurately.
+________________________________________
+2. Classes and Interfaces
+MainClass
+This class contains the main method, which serves as the entry point of the program. It interacts with the user through the console and calls appropriate methods from AtmOperationImpl.
+ATM
+This class represents an ATM with attributes such as:
+•	balance: Stores the current balance.
+•	depositAmount: Stores the amount to be deposited.
+•	withdrawAmount: Stores the amount to be withdrawn.
+It also provides getter and setter methods for these attributes.
+AtmOperationInterf
+This interface defines the basic operations that an ATM should perform:
+•	viewBalance(): Displays the current balance.
+•	withdrawAmount(double withdrawAmount): Withdraws a specified amount.
+•	depositAmount(double depositAmount): Deposits a specified amount.
+•	viewMiniStatement(): Displays the transaction history.
+AtmOperationImpl
+This class implements the AtmOperationInterf interface and provides concrete implementations for all ATM functionalities. It maintains a transaction history using a HashMap.
+________________________________________
+3. Functionality
+1.	Authentication: Users enter their ATM number and PIN. If correct, they can proceed with transactions; otherwise, the program exits.
+2.	View Balance: Displays the current balance.
+3.	Withdraw Amount: Withdraws the requested amount if sufficient balance is available and the amount is a multiple of 500.
+4.	Deposit Amount: Deposits the entered amount into the account.
+5.	Mini Statement: Displays the last few transactions (withdrawals and deposits).
+6.	Exit: Ends the session.
+________________________________________
+4. Usage Instructions
+1.	Run the Java program.
+2.	Enter the ATM number (e.g., 12345).
+3.	Enter the ATM PIN (e.g., 123).
+4.	Select an operation from the menu.
+5.	Follow the prompts to complete the transaction.
+6.	To exit, choose option 5.
+________________________________________
+5. Code Explanation
+•	Authentication: The entered ATM number and PIN are checked against predefined values.
+•	Transaction Processing: The balance is updated dynamically, and transactions are recorded in a HashMap.
+•	Encapsulation: To maintain data integrity, the ATM class uses private attributes with getter and setter methods.
+•	Polymorphism: The AtmOperationInterf interface is implemented by AtmOperationImpl, demonstrating method overriding.
+________________________________________
+6. Possible Enhancements
+•	Implement a database to store user accounts and transaction history persistently.
+•	Allow multiple user accounts instead of hardcoding credentials.
+•	Improve security by encrypting ATM PINs.
+•	Add support for different ATM denominations instead of restricting withdrawals to multiples of 500.
+•	Implement a GUI for a more user-friendly interface.
+•	Introduce mobile OTP verification for an added layer of security.
+________________________________________
+7. Security Measures
+•	Use secure password hashing for storing ATM PINs.
+•	Implement multi-factor authentication for secure transactions.
+•	Validate user input to prevent injection attacks.
+•	Use SSL encryption for data transfer.
+________________________________________
+8. Error Handling and Logging
+•	Implement exception handling to manage errors such as invalid input and insufficient balance.
+•	Maintain logs of all transactions and errors for auditing purposes.
+•	Provide user-friendly error messages for a better experience.
+________________________________________
+9. Future Scope
+•	Expand ATM functionalities to include fund transfers and bill payments.
+•	Integrate AI-based fraud detection systems.
+•	Develop mobile applications for remote ATM transactions.
+•	Implement blockchain technology for transparent and secure transactions.
+________________________________________
+Conclusion
+This ATM system provides a basic implementation of ATM functionalities using Java. It demonstrates concepts such as encapsulation, interfaces, and collections. The system can be expanded further to include additional features and improved security. With future enhancements, it can be transformed into a highly secure and efficient banking application.
+
